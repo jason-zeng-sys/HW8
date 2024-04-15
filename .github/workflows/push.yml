@@ -58,7 +58,7 @@ jobs:
     
 
       - name: Setup VStest.exe
-        uses: Malcolumnixon/Setup-VSTest@v4
+        uses: Malcolmnixon/Setup-VSTest@v4
         
       - name: DownloadBinaries
         uses: actions/download-artifact@v3
