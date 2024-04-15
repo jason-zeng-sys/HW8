@@ -39,3 +39,18 @@ jobs:
       - name: RunLint
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: echo LINT
+
+  test:
+    needs: [build, lint]
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup VStest.exe
+        uses: Malcolumnixon/Setup-VSTest@v4
+      - name: RunTests
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: VStest.Console.exe  x64\Release\UnitTest1.dll
+        
+    
+    
+    
